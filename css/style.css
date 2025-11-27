@@ -1,62 +1,124 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
 }
 
 body {
-	margin: 0 auto;
-	font-family: 'TikTok Sans', sans-serif;
+  margin: 0 auto;
+  font-family: "TikTok Sans", sans-serif;
 }
 
 video {
-	height: 100%;
-	width: 100%;
-	display: block;
-	object-position: center;
-	object-fit: cover;
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-position: center;
+  object-fit: cover;
 }
 
 .reel-page {
-	height: 100vh; /* ti incuriosisce? */
-	max-width: 512px;
-	min-width: 400px;
-	position: relative;
+  height: 100vh; /* ti incuriosisce? */
+  max-width: 512px;
+  min-width: 400px;
+  position: relative;
 }
 
 .reel-header {
-	position: absolute;
-	align-items: center;
-	justify-content: space-between;
-	top: 0;
-	left: 0;
-	right: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
 
-	/* Inserisci qui sotto 
+  /* Inserisci qui sotto 
 	le tue regole, se necessario. */
+  display: flex;
+  min-height: 50px;
+}
+
+.reel-header > * {
+  padding: 0 20px;
+}
+
+.header-menu-item {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-submenu-item {
+  position: relative;
+}
+
+.header-menu-btn,
+.header-submenu-btn {
+  font-family: "TikTok Sans", sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  opacity: 0.4;
+  background: none;
+  border: none;
+}
+
+.header-menu-btn {
+  font-size: 1.3rem;
+  opacity: 1;
+}
+
+.header-menu-btn:hover {
+  transform: scale(1.3);
+}
+
+.active-screen,
+.header-submenu-btn:hover {
+  opacity: 1;
+}
+
+.header-submenu-item:nth-of-type(2) > .header-submenu-btn::after {
+  font-family: "bootstrap-icons";
+  content: "\F309";
+  font-size: 2.7rem;
+  color: red;
+  margin: 0 3px;
+  position: absolute;
+  top: 1px;
+  translate: -50% -50%;
+}
+
+.header-submenu-item:nth-of-type(3) > .header-submenu-btn::after {
+  content: "_";
+  font-size: 3rem;
+  position: absolute;
+  left: 50%;
+  translate: -50% -40%;
 }
 
 /* Footer */
 
 footer {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
 
-	/* Inserisci qui sotto 
+  /* Inserisci qui sotto 
 	le tue regole, se necessario. */
 }
 
 /* Sidebar */
 .sidebar {
-	padding: 0 16px;
-	position: absolute;
-	right: 0;
-	top: 40%;
+  padding: 0 16px;
+  position: absolute;
+  right: 0;
+  top: 40%;
 
-	/* Inserisci qui sotto 
+  /* Inserisci qui sotto 
 	le tue regole, se necessario. */
 }
 
@@ -65,19 +127,19 @@ Regole per evidenziare i blocchi
 da rimuovere una volta concluso
 --------------------- */
 .debug footer {
-	min-height: 100px;
-	border: 2px dashed #fff;
+  min-height: 100px;
+  border: 2px dashed #fff;
 }
 
 .debug .sidebar {
-	min-width: 80px;
-	min-height: 450px;
-	border: 2px dashed #ff0;
+  min-width: 80px;
+  min-height: 450px;
+  border: 2px dashed #ff0;
 }
 
-.debug .reel-header {
-	min-height: 50px;
-	border: 2px dashed #fff;
-}
+/* .debug .reel-header {
+  min-height: 50px;
+  border: 2px dashed #fff;
+} */
 
 /* --------------------- */
