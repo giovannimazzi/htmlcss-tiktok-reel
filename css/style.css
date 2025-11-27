@@ -57,7 +57,8 @@ video {
 
 .header-menu-btn,
 .header-submenu-btn,
-.sidebar-btn {
+.sidebar-btn,
+.video-desc-btn {
   font-family: "TikTok Sans", sans-serif;
   font-size: 1.1rem;
   color: white;
@@ -77,11 +78,6 @@ video {
 .header-menu-btn:hover,
 .sidebar-item:hover * {
   transform: scale(1.3);
-}
-
-.active-screen,
-.header-submenu-btn:hover {
-  opacity: 1;
 }
 
 .header-submenu-item:nth-of-type(2) > .header-submenu-btn::after {
@@ -114,6 +110,85 @@ footer {
 
   /* Inserisci qui sotto 
 	le tue regole, se necessario. */
+  min-height: 160px;
+}
+
+.footer-text {
+  padding-left: 20px;
+}
+
+.profile-name {
+  font-weight: bold;
+}
+
+.profile-name,
+.video-desc,
+.video-desc-btn {
+  font-size: 0.95rem;
+  margin-bottom: 7px;
+}
+
+.video-desc,
+.video-desc-btn {
+  display: inline;
+}
+
+.video-desc-btn:hover {
+  color: burlywood;
+}
+
+.nav-footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  max-width: 512px;
+  height: 80px;
+}
+
+.nav-item {
+  color: white;
+  opacity: 0.4;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.nav-item > span:nth-of-type(2) {
+  font-size: 0.7rem;
+}
+
+.nav-item:nth-of-type(3) {
+  color: black;
+  opacity: 1;
+  background-color: white;
+  padding: 0 8px;
+  height: 35%;
+  translate: 8px -8px;
+  border-radius: 20%;
+  border-left: 3px solid aqua;
+  border-right: 3px solid fuchsia;
+}
+
+.nav-item:nth-of-type(4) .nav-icon::after {
+  content: "19";
+  position: absolute;
+  background-color: red;
+  font-size: 0.7rem;
+  color: white;
+  border-radius: 35%;
+  padding: 0 5px;
+  translate: -50% 0;
+  opacity: 1;
 }
 
 /* Sidebar */
@@ -184,12 +259,18 @@ footer {
   transform: none;
 }
 
+.active-screen,
+.header-submenu-btn:hover,
+.nav-item:hover {
+  opacity: 1;
+}
+
 /* ---------------------
 Regole per evidenziare i blocchi 
 da rimuovere una volta concluso
 --------------------- */
 .debug footer {
-  min-height: 100px;
+  /* min-height: 100px; */
   border: 2px dashed #fff;
 }
 
