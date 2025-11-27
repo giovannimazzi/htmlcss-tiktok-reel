@@ -56,21 +56,26 @@ video {
 }
 
 .header-menu-btn,
-.header-submenu-btn {
+.header-submenu-btn,
+.sidebar-btn {
   font-family: "TikTok Sans", sans-serif;
   font-size: 1.1rem;
   color: white;
-  opacity: 0.4;
   background: none;
   border: none;
+  display: block;
+}
+
+.header-submenu-btn {
+  opacity: 0.4;
 }
 
 .header-menu-btn {
   font-size: 1.3rem;
-  opacity: 1;
 }
 
-.header-menu-btn:hover {
+.header-menu-btn:hover,
+.sidebar-item:hover * {
   transform: scale(1.3);
 }
 
@@ -120,6 +125,63 @@ footer {
 
   /* Inserisci qui sotto 
 	le tue regole, se necessario. */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar-item {
+  color: white;
+  position: relative;
+}
+
+.sidebar-item p {
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-btn {
+  font-size: 2rem;
+}
+
+.sidebar-item:first-child {
+  position: relative;
+}
+
+.sidebar-item:first-child .sidebar-btn {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.user-logo {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  bottom: 19px;
+}
+
+.sidebar-item:hover p,
+.sidebar-item:hover .user-logo {
+  transform: none;
 }
 
 /* ---------------------
@@ -131,15 +193,13 @@ da rimuovere una volta concluso
   border: 2px dashed #fff;
 }
 
-.debug .sidebar {
+/* .debug .sidebar {
   min-width: 80px;
   min-height: 450px;
   border: 2px dashed #ff0;
-}
+} */
 
 /* .debug .reel-header {
   min-height: 50px;
   border: 2px dashed #fff;
 } */
-
-/* --------------------- */
